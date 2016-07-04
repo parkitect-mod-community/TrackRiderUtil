@@ -25,7 +25,8 @@ namespace TrackedRiderUtility
 			BindingFlags bindingAttr = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField;
 			FieldInfo field = typeof(AssetManager).GetField("deprecatedPrefabMapping", bindingAttr);
 			Dictionary<string, string> dictionary = (Dictionary<string, string>)field.GetValue(ScriptableSingleton<AssetManager>.Instance);
-			dictionary.Add(oldMapping, newMapping);
+            if(!dictionary.ContainsKey(oldMapping))
+                dictionary.Add(oldMapping, newMapping);
 		}
 	}
 }
