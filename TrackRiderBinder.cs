@@ -72,7 +72,7 @@ namespace TrackedRiderUtility
 			return t;
 		}
 
-		public T RegisterCar<T>(GameObject cart, string name, float offsetBack, float offsetFront, bool front, Color[] colors) where T : BaseCar
+        public T RegisterCar<T>(GameObject cart, string name, float offsetBack, float offsetFront, bool front, Color[] colors) where T : Car
 		{
 			GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(cart);
 			T t = gameObject.AddComponent<T>();
@@ -80,7 +80,8 @@ namespace TrackedRiderUtility
 			t.offsetBack = offsetBack;
 			t.offsetFront = offsetFront;
 			this.registeredObjects.Add(t);
-			t.Decorate(front);
+            if(t is BaseCar)
+                (t as BaseCar).Decorate(front);
 			Rigidbody rigidbody = cart.GetComponent<Rigidbody>();
 			if (rigidbody == null)
 			{

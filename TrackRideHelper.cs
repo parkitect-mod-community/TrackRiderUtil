@@ -43,8 +43,10 @@ namespace TrackedRiderUtility
 					break;
 				}
 			}
-			return UnityEngine.Object.Instantiate<TrackedRide>(original);
+			return original;
 		}
+
+
 
 		public static void PassMeshGeneratorProperties(MeshGenerator meshgeneratorFrom, MeshGenerator meshGeneratorTo)
 		{
