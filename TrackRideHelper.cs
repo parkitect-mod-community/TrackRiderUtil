@@ -58,6 +58,7 @@ namespace TrackedRiderUtility
 			meshGeneratorTo.crossBeamGO = meshgeneratorFrom.crossBeamGO;
 			meshGeneratorTo.customColors = meshgeneratorFrom.customColors;
 			meshGeneratorTo.tunnelMeshGenerator = meshgeneratorFrom.tunnelMeshGenerator;
-		}
+            meshGeneratorTo.lsmFinGO = meshgeneratorFrom.lsmFinGO;
+        }
 	}
 }
