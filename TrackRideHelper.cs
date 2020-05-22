@@ -15,7 +15,7 @@ namespace TrackedRiderUtility
 				Material material = objectMaterials[i];
 				if (material.name == shader)
 				{
-					TrackRideHelper.SetMaterial(GO, material);
+					SetMaterial(GO, material);
 					break;
 				}
 			}
@@ -51,7 +51,8 @@ namespace TrackedRiderUtility
 		public static void PassMeshGeneratorProperties(MeshGenerator meshgeneratorFrom, MeshGenerator meshGeneratorTo)
 		{
 			meshGeneratorTo.stationPlatformGO = meshgeneratorFrom.stationPlatformGO;
-			meshGeneratorTo.material = meshgeneratorFrom.material;
+            meshGeneratorTo.stationHandRailGO = meshgeneratorFrom.stationHandRailGO;
+            meshGeneratorTo.material = meshgeneratorFrom.material;
 			meshGeneratorTo.liftMaterial = meshgeneratorFrom.liftMaterial;
 			meshGeneratorTo.frictionWheelsGO = meshgeneratorFrom.frictionWheelsGO;
 			meshGeneratorTo.supportInstantiator = meshgeneratorFrom.supportInstantiator;

@@ -8,9 +8,10 @@ namespace TrackedRiderUtility
 		{
 			if (isFront)
 			{
-				frontAxis = transform.Find("frontAxis");
+				frontAxisArray = new []{transform.Find("frontAxis")};
 			}
-			backAxis = transform.Find("backAxis");
-		}
+
+            backAxisArray = new[] {transform.Find("backAxis")};
+        }
 	}
 }
